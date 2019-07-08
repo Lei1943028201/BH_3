@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store/'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI, { size: 'mini'});
 
 Vue.config.productionTip = false
 
@@ -10,6 +14,10 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  render: h => h(App),
 })
+
+const env = process.env.NODE_ENV
+let target = process.env.VUE_APP_URL  // development和production环境是不同的
+console.log("env:  "+env);
+console.log("target:   "+target);
