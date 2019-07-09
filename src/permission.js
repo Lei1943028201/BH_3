@@ -1,10 +1,8 @@
 import router from './router'
 import store from './store'
-import { Message } from 'element-ui'
-import { getToken } from '@/utils/auth' // 验权(从cookie中获取)
-import {
-    setTitle
-} from '@/utils/mUtils' // 设置浏览器头部标题
+import {Message} from 'element-ui'
+import {getToken} from '@/utils/auth' // 验权(从cookie中获取)
+import {setTitle} from '@/utils/mUtils' // 设置浏览器头部标题
 
 // permission judge function
 function hasPermission(roles, permissionRoles) {
@@ -12,6 +10,7 @@ function hasPermission(roles, permissionRoles) {
     if (!permissionRoles) return true
     return roles.some(role => permissionRoles.indexOf(role) >= 0)
 }
+
 const whiteList = ['/login'] // 不重定向白名单
 
 router.beforeEach((to, from, next) => {
@@ -28,19 +27,19 @@ router.beforeEach((to, from, next) => {
                 path: '/lock'
             })
         } else if (to.path === '/login') {
-            next({ path: '/' })  // 会匹配到path:'',后面的path:'*'还没有生成;
+            next({path: '/'})  // 会匹配到path:'',后面的path:'*'还没有生成;
         } else {
             if (store.getters.roles.length === 0) {
                 store.dispatch('GetInfo').then(res => { // 拉取用户信息
                     const roles = res.roles
-                    store.dispatch('GenerateRoutes', { roles }).then(() => { // 根据roles权限生成可访问的路由表
+                    store.dispatch('GenerateRoutes', {roles}).then(() => { // 根据roles权限生成可访问的路由表
                         router.addRoutes(store.getters.addRouters) // 动态添加可访问权限路由表
-                        next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+                        next({...to, replace: true}) // hack方法 确保addRoutes已完成
                     })
                 }).catch((err) => {
                     store.dispatch('FedLogOut').then(() => {
                         Message.error(err || 'Verification failed, please login again')
-                        next({ path: '/' })
+                        next({path: '/'})
                     })
                 })
             } else {
@@ -48,7 +47,7 @@ router.beforeEach((to, from, next) => {
                 if (hasPermission(store.getters.roles, to.meta.roles)) {
                     next()//
                 } else {
-                    next({ path: '/401', replace: true, query: { noGoBack: true }})
+                    next({path: '/401', replace: true, query: {noGoBack: true}})
                 }
             }
         }
@@ -68,7 +67,6 @@ router.afterEach(() => {
         setTitle(browserHeaderTitle)
     }, 0)
 })
-
 
 
 /**

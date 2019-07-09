@@ -10,7 +10,6 @@ let service =  axios.create({
 })
 // request拦截器
 service.interceptors.request.use(config => {
-    debugger
     if (store.getters.token) {
         config.headers = {
             'Authorization' : "Token " + getToken(), //携带权限参数
@@ -25,7 +24,7 @@ service.interceptors.request.use(config => {
 service.interceptors.response.use(
     response => {
         /**
-         * code为非1是抛错 可结合自己业务进行修改
+         * code为非 1是抛错 结合自己业务进行修改
          * code:200,接口正常返回;-1:返回的数据不对;
          */
         const res = response.data

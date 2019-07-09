@@ -1,18 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Layout from "../layout/home"; // 页面整体布局
+import Layout from "../layout/TheHome"; // 页面整体布局
 Vue.use(Router)
-
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
 
 /**
  * 1、roles:后台返回的权限结构;
@@ -22,12 +11,7 @@ export default new Router({
 const whiteList = [
     '/'
 ];
-/**
- * path:''与path:'*'的区别：
- * 1、path:'*', 会匹配所有路径
- * 2、path:''，也是会匹配到路由
- *
- */
+
 //默认不需要权限的页面
 export const constantRouterMap = [
     {
@@ -44,17 +28,13 @@ export const constantRouterMap = [
         name: 'index',
         component: Layout,
         meta: {
-            title: '首页',
-            icon: 'fa-dashboard',
+            title: '首页'
         },
-        noDropdown: true,
         children: [
             {
                 path: 'index',
                 meta: {
                     title: '首页',
-                    icon: 'fa-index',
-                    routerType: 'leftmenu'
                 },
                 component: () => import('@/page'),
             }
@@ -63,9 +43,10 @@ export const constantRouterMap = [
 ]
 
 //注册路由
-/*export default new Router({
+export default new Router({
+    // mode: 'history', //后端支持可开
     routes: constantRouterMap
-})*/
+})
 
 //异步路由（需要权限的页面）
 export const asyncRouterMap = [

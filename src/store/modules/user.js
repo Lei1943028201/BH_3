@@ -1,19 +1,18 @@
-
 import * as mUtils from '@/utils/mUtils'
-import { login, logout, getInfo } from '@/api/login'  // 导入登录相关接口
-import { getUserList } from '@/api/user'  // 导入用户信息相关接口
-import { getToken, setToken, removeToken } from '@/utils/auth'
+import {login, logout, getInfo} from '@/api/login'  // 导入登录相关接口
+import {getUserList} from '@/api/user'  // 导入用户信息相关接口
+import {getToken, setToken, removeToken} from '@/utils/auth'
 
 
-const user  = {
-    state : {
-        name:'',
-        avatar:'',
+const user = {
+    state: {
+        name: '',
+        avatar: '',
         token: getToken(),
         roles: [],
-        browserHeaderTitle: mUtils.getStore('browserHeaderTitle') || '小爱管理系统'
+        browserHeaderTitle: mUtils.getStore('browserHeaderTitle') || '管理系统'
     },
-    getters : {
+    getters: {
         token: state => state.token,
         roles: state => state.roles,
         avatar: state => state.avatar,
@@ -40,10 +39,9 @@ const user  = {
             state.avatar = avatar
         },
     },
-    actions:{
+    actions: {
         // 登录
-        Login({ commit }, userInfo) {
-            debugger
+        Login({commit}, userInfo) {
             const username = userInfo.username.trim()
             return new Promise((resolve, reject) => {
                 login(username, userInfo.password).then(response => {
@@ -62,7 +60,7 @@ const user  = {
         },
 
         // 根据token获取用户信息
-        GetInfo({ commit, state }) {
+        GetInfo({commit, state}) {
             return new Promise((resolve, reject) => {
                 getInfo(state.token).then(response => {
                     const data = response.data // obj
@@ -81,28 +79,18 @@ const user  = {
         },
 
         // 登出
-        LogOut({ commit, state }) {
+        LogOut({commit, state}) {
             return new Promise((resolve, reject) => {
                 console.log('LogOut-----111----');
                 commit('SET_TOKEN', '')
                 commit('SET_ROLES', [])
-                // commit('CLEAR_LOCK')
                 removeToken()
                 resolve()
-                // logout(state.token).then(() => {
-                //   commit('SET_TOKEN', '')
-                //   commit('SET_ROLES', [])
-                //   commit('CLEAR_LOCK')
-                //   removeToken()
-                //   resolve()
-                // }).catch(error => {
-                //   reject(error)
-                // })
             })
         },
 
         // 前端 登出
-        FedLogOut({ commit }) {
+        FedLogOut({commit}) {
             return new Promise(resolve => {
                 commit('SET_TOKEN', '')
                 removeToken()
@@ -111,7 +99,7 @@ const user  = {
         },
 
         // 动态修改权限;本实例中,role和token是相同的;
-        ChangeRoles({ commit }, role) {
+        ChangeRoles({commit}, role) {
             return new Promise(resolve => {
                 const token = role;
                 commit('SET_TOKEN', token)
@@ -128,7 +116,7 @@ const user  = {
         },
 
         // 获取用户列表
-        GetUserList({ commit }, reqData) {
+        GetUserList({commit}, reqData) {
             return new Promise(resolve => {
                 getUserList(reqData).then(response => {
                     const data = response.data
@@ -142,9 +130,3 @@ const user  = {
 }
 
 export default user;
-
-/**
- * 1、用户退出,需要调取后台接口吗？后台具体的业务逻辑是什么？
- *
- *
- */

@@ -1,10 +1,9 @@
-
 import store from '@/store'
 
-export default{
+export default {
     // inserted函数：当被绑定的元素插入到 DOM 中时……
     inserted(el, binding, vnode) {
-        const { value } = binding  // 获取指令绑定的值;
+        const {value} = binding  // 获取指令绑定的值;
         const roles = store.getters && store.getters.roles
 
         if (value && value instanceof Array && value.length > 0) {

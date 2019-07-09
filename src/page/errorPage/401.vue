@@ -1,6 +1,6 @@
 <template>
     <div>
-        欢迎
+        401
     </div>
 </template>
 

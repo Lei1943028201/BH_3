@@ -14,7 +14,7 @@ export const setStore = (name, content) => {
  */
 export const getStore = name => {
     if (!name) return;
-    var value = window.localStorage.getItem(name);
+    let value = window.localStorage.getItem(name);
     if (value !== null) {
         try {
             value = JSON.parse(value);
@@ -34,23 +34,6 @@ export const removeStore = name => {
 }
 
 /**
- * 让整数自动保留2位小数
- */
-// export const returnFloat = value => {
-//     var value=Math.round(parseFloat(value)*100)/100;
-//     var xsd=value.toString().split(".");
-//     if(xsd.length==1){
-//         value=value.toString()+".00";
-//         return value;
-//     }
-//     if(xsd.length>1){
-//         if(xsd[1].length<2){
-//             value=value.toString()+"0";
-//         }
-//         return value;
-//     }
-// }
-/**
  * @param {date} 标准时间格式:Fri Nov 17 2017 09:26:23 GMT+0800 (中国标准时间)
  * @param {type} 类型
  *   type == 1 ---> "yyyy-mm-dd hh:MM:ss.fff"
@@ -58,13 +41,13 @@ export const removeStore = name => {
  *   type == '' ---> "yyyy-mm-dd hh:MM:ss"
  */
 export const formatDate = (date, type) =>{
-    var year = date.getFullYear();//年
-    var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;//月
-    var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();//日
-    var hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();//时
-    var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();//分
-    var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();//秒
-    var milliseconds = date.getMilliseconds() < 10 ? "0" + date.getMilliseconds() : date.getMilliseconds() //毫秒
+    let year = date.getFullYear();//年
+    let month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;//月
+    let day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();//日
+    let hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();//时
+    let minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();//分
+    let seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();//秒
+    let milliseconds = date.getMilliseconds() < 10 ? "0" + date.getMilliseconds() : date.getMilliseconds() //毫秒
     if (type == 1) {
         return year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds + "." + milliseconds;
     } else if(type == 2){
@@ -79,13 +62,13 @@ export const formatDate = (date, type) =>{
  * 时间转换：20150101010101 --> '2015-01-01 01:01:01'
  */
 export const parseToDate = (timeValue) => {
-    var result = "";
-    var year = timeValue.substr(0, 4);
-    var month = timeValue.substr(4, 2);
-    var date = timeValue.substr(6, 2);
-    var hour = timeValue.substr(8, 2);
-    var minute = timeValue.substr(10, 2);
-    var second = timeValue.substr(12, 2);
+    let result = "";
+    let year = timeValue.substr(0, 4);
+    let month = timeValue.substr(4, 2);
+    let date = timeValue.substr(6, 2);
+    let hour = timeValue.substr(8, 2);
+    let minute = timeValue.substr(10, 2);
+    let second = timeValue.substr(12, 2);
     result = year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
     return result;
 }
@@ -143,16 +126,16 @@ export const showMessage = () =>{
  */
 export const  readFile = file => {
     console.log(file)
-    //var file = this.files[0];
+    //let file = this.files[0];
     //判断是否是图片类型
     if (!/image\/\w+/.test(file.raw.type)) {
         alert("只能选择图片");
         return false;
     }
-    var reader = new FileReader();
+    let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function (e) {
-        var filedata = {
+        let filedata = {
             filename: file.name,
             filebase64: e.target.result
         }
@@ -175,7 +158,7 @@ export const loadStyle = url => {
  * 设置浏览器头部标题
  */
 export const setTitle = (title) => {
-    title = title ? `${title}` : '小爱管理系统'
+    title = title ? `${title}` : '管理系统'
     window.document.title = title
 }
 
@@ -189,6 +172,6 @@ export const param2Obj = url => {
 
 //是否为正整数
 export const isInteger = (s) => {
-    var re = /^[0-9]+$/ ;
+    let re = /^[0-9]+$/ ;
     return re.test(s)
 }

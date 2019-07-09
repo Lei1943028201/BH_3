@@ -1,6 +1,6 @@
 <template>
     <div>
-        login
+        left-menu
     </div>
 </template>
 

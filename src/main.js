@@ -4,20 +4,23 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/'
+
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-Vue.use(ElementUI, { size: 'mini'});
+
+Vue.use(ElementUI, {size: 'mini'});
 
 Vue.config.productionTip = false
 
+import './mockjs'  //引用mock
+import '@/permission' // permission control
+
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App),
+    el: '#app',
+    router,
+    store,
+    render: h => h(App),
 })
 
-const env = process.env.NODE_ENV
-let target = process.env.VUE_APP_URL  // development和production环境是不同的
-console.log("env:  "+env);
-console.log("target:   "+target);

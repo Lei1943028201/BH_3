@@ -1,6 +1,6 @@
 <template>
     <div>
-        欢迎
+        footer
     </div>
 </template>
 
