@@ -1,48 +1,4 @@
 import {asyncRouterMap, constantRouterMap} from '@/router'
-import {topRouterMap} from "@/router/topRouter";
-import * as mutils from '@/utils/mUtils'
-
-
-// 循环追加顶栏菜单
-function addTopRouter() {
-    asyncRouterMap.forEach((item) => {
-        if (item.children && item.children.length >= 1) {
-            item.children.forEach((sitem) => {
-                topRouterMap.forEach((citem) => {
-                    if (sitem.name === citem.parentName) {
-                        let newChildren = item.children.concat(citem.topmenulist); // arr
-                        item.children = newChildren;
-                    }
-                })
-            })
-        }
-    })
-    return asyncRouterMap;
-}
-
-// 获取到当前路由对应顶部子菜单
-function filterTopRouters(data) {
-    let topRouters = topRouterMap.find((item) => {
-        return item.parentName === data.name
-    })
-    if (!mutils.isEmpty(topRouters)) {
-        return topRouters.topmenulist;
-    }
-}
-
-/**
- * 通过meta.role判断是否与当前用户权限匹配
- * @param roles
- * @param route
- */
-function hasPermission(roles, route) {
-    // roles为权限身份数组
-    if (route.meta && route.meta.roles) {
-        return roles.some(role => route.meta.roles.indexOf(role) >= 0)
-    } else {
-        return true
-    }
-}
 
 /**
  * 递归过滤异步路由表，返回符合用户角色权限的路由表
@@ -75,27 +31,19 @@ const permission = {
     getters: {
         permission_routers: state => state.routers, // 所有路由
         addRouters: state => state.addRouters,  // 权限过滤路由
-        topRouters: state => state.topRouters,  // 顶部三级路由
-        topTitle: state => state.topTitle // 顶部的title
     },
     mutations: {
         SET_ROUTERS: (state, routers) => {
             state.addRouters = routers // 权限路由
             state.routers = constantRouterMap.concat(routers) // 总路由
-        },
-        CLICK_INNER_LEFT_MENU: (state, data) => {
-            state.topRouters = filterTopRouters(data);
-        },
-        CLICK_TOP_MENU: (state, data) => {
-            state.topTitle = data.title
-        },
+        }
     },
     actions: {
         // 根据角色，重新设置权限路由;并保存到vuex中,SET_ROUTERS;
         GenerateRoutes({commit}, data) {
             return new Promise(resolve => {
                 const {roles} = data
-                let asyncRouterMaps = addTopRouter(); // 将头部菜单添加到对应的二级菜单下面;
+                let asyncRouterMaps = asyncRouterMap; // 将头部菜单添加到对应的二级菜单下面;
                 let accessedRouters
                 if (roles.indexOf('admin') >= 0) {
                     console.log('admin>=0')
@@ -109,14 +57,6 @@ const permission = {
                 commit('SET_ROUTERS', accessedRouters)
                 resolve()
             })
-        },
-
-        ClickLeftInnerMenu({commit}, data) {
-            commit('CLICK_INNER_LEFT_MENU', data)
-        },
-
-        ClickTopMenu({commit}, data) {
-            commit('CLICK_TOP_MENU', data)
         }
     }
 }

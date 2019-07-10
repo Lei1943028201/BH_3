@@ -51,7 +51,8 @@ router.beforeEach((to, from, next) => {
                 }
             }
         }
-    } else {
+    }
+    else {
         if (whiteList.indexOf(to.path) !== -1) {
             next()
         } else {
@@ -99,6 +100,5 @@ router.afterEach(() => {
  2.2.1、如果设置了白名单用户，则直接跳转到相应的页面;反之，则跳转至登录页面;
 
  3、通过路由导航钩子函数router.afterEach(() => {}),做收尾工作，如下：
- 3.1、NProgress.done() // 结束Progress
- 3.2、获取到title并设置title;
+ 3.1、获取到title并设置title;
  */

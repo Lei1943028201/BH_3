@@ -1,6 +1,5 @@
 import * as mUtils from '@/utils/mUtils'
 import {login, logout, getInfo} from '@/api/login'  // 导入登录相关接口
-import {getUserList} from '@/api/user'  // 导入用户信息相关接口
 import {getToken, setToken, removeToken} from '@/utils/auth'
 
 
@@ -23,7 +22,6 @@ const user = {
     },
     mutations: {
         SET_TOKEN: (state, token) => {
-            debugger
             state.token = token
         },
         SET_ROLES: (state, roles) => {
@@ -45,8 +43,8 @@ const user = {
             const username = userInfo.username.trim()
             return new Promise((resolve, reject) => {
                 login(username, userInfo.password).then(response => {
-                    debugger
                     const token = response.data.token;
+                    console.log(response)
                     // 登录成功之后主要目的获取token;
                     // token保存方式为：setToken,'SET_TOKEN';
                     setToken(token)
@@ -63,6 +61,7 @@ const user = {
         GetInfo({commit, state}) {
             return new Promise((resolve, reject) => {
                 getInfo(state.token).then(response => {
+                    console.log(response)
                     const data = response.data // obj
                     if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
                         commit('SET_ROLES', data.roles) // []
@@ -81,7 +80,6 @@ const user = {
         // 登出
         LogOut({commit, state}) {
             return new Promise((resolve, reject) => {
-                console.log('LogOut-----111----');
                 commit('SET_TOKEN', '')
                 commit('SET_ROLES', [])
                 removeToken()
@@ -114,18 +112,6 @@ const user = {
                 })
             })
         },
-
-        // 获取用户列表
-        GetUserList({commit}, reqData) {
-            return new Promise(resolve => {
-                getUserList(reqData).then(response => {
-                    const data = response.data
-                    resolve(data)
-                })
-            })
-        }
-
-
     }
 }
 

@@ -1,6 +1,7 @@
 <template>
     <div>
         header
+        <el-button @click="layout()">登出</el-button>
     </div>
 </template>
 
@@ -15,7 +16,13 @@
             return {}
         },
         //方法函数
-        methods: {},
+        methods: {
+            layout() {
+                this.$store.dispatch('LogOut').then(() => {
+                    location.reload();
+                })
+            },
+        },
         //计算属性
         computed: {},
         //监视函数
