@@ -1,6 +1,7 @@
-import request from '@/utils/axios'
+import request from './axios'
 
 export function login(username, password) {
+
     return request({
         url: '/user/login',
         method: 'post',
