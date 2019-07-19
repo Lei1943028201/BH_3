@@ -1,6 +1,6 @@
 import tableTitle from './tableTitle'
 
-const applyPreservation = {
+export default {
     state: {
         tableTitle
     },
@@ -13,6 +13,4 @@ const applyPreservation = {
     actions: {
 
     }
-}
-
-export default applyPreservation;
+};

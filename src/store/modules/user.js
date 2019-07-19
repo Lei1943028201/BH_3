@@ -2,8 +2,7 @@ import * as mUtils from '@/utils/mUtils'
 import {login, logout, getInfo} from '@/api/login'  // 导入登录相关接口
 import {getToken, setToken, removeToken} from '@/utils/auth'
 
-
-const user = {
+export default {
     state: {
         name: '',
         avatar: '',
@@ -113,6 +112,4 @@ const user = {
             })
         },
     }
-}
-
-export default user;
+};

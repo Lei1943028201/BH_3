@@ -35,8 +35,7 @@ function filterAsyncRouter(asyncRouterMap, roles) {
     return accessedRouters
 }
 
-
-const permission = {
+export default  {
     state: {
         routers: constantRouterMap,
         addRouters: [],
@@ -75,5 +74,3 @@ const permission = {
         }
     }
 }
-
-export default permission

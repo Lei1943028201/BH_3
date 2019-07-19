@@ -1,4 +1,5 @@
-const applyGuarantee = {
+
+export default {
     state: {
 
     },
@@ -11,6 +12,4 @@ const applyGuarantee = {
     actions: {
 
     }
-}
-
-export default applyGuarantee;
+};

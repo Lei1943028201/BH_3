@@ -1,3 +1,4 @@
+// 保全基本信息
 const BQJBXX = [
     {
         id: 'c_xqfy',
@@ -29,6 +30,7 @@ const BQJBXX = [
     }
 ]
 
+// 申请人
 const SQR = [
     {
         id: 'date',
@@ -47,6 +49,7 @@ const SQR = [
     }
 ]
 
+// 被申请人
 const BSQR = [
     {
         id: 'date',
@@ -65,6 +68,7 @@ const BSQR = [
     }
 ]
 
+// 被告代理人
 const BGDLR = [
     {
         id: 'date',
@@ -83,11 +87,86 @@ const BGDLR = [
     }
 ]
 
-const tableTitle = {
+// 财产线索
+const CCXS = [
+    {
+        id: 'date',
+        name: '财产类型',
+        width: '180'
+    },
+    {
+        id: 'name',
+        name: '财产所有人',
+        width: '180'
+    },
+    {
+        id: 'address',
+        name: '财产信息',
+        width: ''
+    },
+    {
+        id: 'address',
+        name: '价值',
+        width: '180'
+    }
+]
+
+// 担保信息
+const DBXX = [
+    {
+        id: 'date',
+        name: '担保方式',
+        width: '180'
+    },
+    {
+        id: 'name',
+        name: '担保物名称',
+        width: '180'
+    },
+    {
+        id: 'address',
+        name: '财产/担保信息',
+        width: ''
+    },
+    {
+        id: 'address',
+        name: '价值（万元）',
+        width: ''
+    }
+
+]
+
+// 上传材料
+const SCCL = [
+    {
+        id: 'date',
+        name: '材料类型',
+        width: '180'
+    },
+    {
+        id: 'name',
+        name: '材料名称',
+        width: '180'
+    },
+    {
+        id: 'address',
+        name: '材料上传说明',
+        width: ''
+    },
+    {
+        id: 'address',
+        name: '文件名称',
+        width: ''
+    }
+]
+
+
+export default {
     BQJBXX,
     SQR,
     BSQR,
-    BGDLR
+    BGDLR,
+    CCXS,
+    DBXX,
+    SCCL
 }
-
-export default tableTitle
