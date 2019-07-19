@@ -3,7 +3,6 @@
         <div class="fd-main">
             <i class="el-icon-close fd-btn-close"></i>
             <div class="fd-content">
-          <!--      <h2 class="fd-title"><span>网上保全须知</span></h2>-->
                 <MyTitle theTitle="网上保全须知"/>
                 <ul>
                     <li class="fd-size-18 text_center fd-title">《民事诉讼法》</li>
@@ -83,7 +82,6 @@
         .fd-main{
             position: relative;
             margin: 50px auto;
-            /*     .el-center;*/
             box-sizing: border-box;
             padding: 42px 20px 60px 60px;
             width: 80%;
@@ -96,8 +94,6 @@
                 max-height: 524px;
                 .fd-title{
                     box-sizing: border-box;
-            /*        width: 1034px;
-                    height: 45px;*/
                     border-bottom: 1px solid #eee;
                     span{
                         display: inline-block;

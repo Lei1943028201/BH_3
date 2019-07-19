@@ -3,195 +3,63 @@
         <SideBar/>
         <div class="fd-main">
             <h2 id="to_0" class="fd-title">担保基础信息</h2>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-wrap">
-                    <ul class="clear">
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_sqr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                        <el-table-column label="操作" width="200">
-                            <template slot-scope="scope">
-                                <span>编辑</span>
-                                <span>删除1</span>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-                    <el-pagination
-                            background
-                            layout="prev, pager, next, jumper"
-                            :total="100">
-                    </el-pagination>
-                </div>
-            </div>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_bsqr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                        <el-table-column label="操作" width="200">
-                            <template slot-scope="scope">
-                                <span>编辑</span>
-                                <span>删除1</span>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-                </div>
-            </div>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_ygdlr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                        <el-table-column label="操作" width="200">
-                            <template slot-scope="scope">
-                                <span>编辑</span>
-                                <span>删除1</span>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-                </div>
-            </div>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_ygdlr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                        <el-table-column label="操作" width="200">
-                            <template slot-scope="scope">
-                                <span>编辑</span>
-                                <span>删除1</span>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-                </div>
-            </div>
-            <h2 id="to_1" class="fd-title">担保基础信息</h2>
-            <div class="fd-content">
-                <MyTitle theTitle="保全基本信息"/>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_ygdlr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                        <el-table-column label="操作" width="200">
-                            <template slot-scope="scope">
-                                <span>编辑</span>
-                                <span>删除1</span>
-                            </template>
-                        </el-table-column>
-                    </el-table>
-                </div>
-            </div>
+            <!-- 保全基本信息 -->
+            <ItemBQJBXX/>
+            <!-- 申请人 -->
+            <ItemSQR/>
+            <!-- 被申请人 -->
+            <ItemBSQR/>
+            <!-- 原告代理人 -->
+            <ItemYGDLR/>
+            <!-- 财产线索 -->
+            <ItemCCXS/>
+            <h2 id="to_1" class="fd-title">担保信息</h2>
+            <!-- 担保信息 -->
+            <ItemDBXX/>
+            <h2 id="to_2" class="fd-title">上传材料</h2>
+            <!-- 上传材料 -->
+            <ItemSCCL/>
             <div class="fd-btn-wrap">
                 <el-button type="primary" @click="handlerBtn(false)">上一步</el-button>
                 <el-button type="primary">暂存</el-button>
                 <el-button type="primary" @click="handlerBtn(true)">预览</el-button>
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
     import SideBar from '../../components/applyPreservation/sideBar'
-    import MyTitle from '../../components/common/myTitle'
+    import ItemBQJBXX from '../../components/applyPreservation/item/itemBQJBXX'  // 保全基本信息
+    import ItemSQR from '../../components/applyPreservation/item/itemSQR'        // 申请人
+    import ItemBSQR from '../../components/applyPreservation/item/itemBSQR'      // 被申请人
+    import ItemYGDLR from '../../components/applyPreservation/item/itemYGDLR'    // 原告代理人
+    import ItemCCXS from '../../components/applyPreservation/item/itemCCXS'      // 财产线索
+    import ItemDBXX from '../../components/applyPreservation/item/itemDBXX'      // 担保信息
+    import ItemSCCL from '../../components/applyPreservation/item/itemSCCL'      // 上传材料
     export default {
         name: "applyPreservation",
         data(){
             return {
-                tableData_sqr: [
-                    {
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                },
-                    {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                },
-                    {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }
-                ],
-                tableData_bsqr: [
-                    {
-                        date: '2016-05-02',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1518 弄'
-                    },
-                    {
-                        date: '2016-05-04',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1517 弄'
-                    },
-                    {
-                        date: '2016-05-03',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1516 弄'
-                    }
-                ],
-                tableData_ygdlr: []
+
             }
         },
         components: {
             SideBar,
-            MyTitle
+            ItemBQJBXX,
+            ItemSQR,
+            ItemBSQR,
+            ItemYGDLR,
+            ItemCCXS,
+            ItemDBXX,
+            ItemSCCL,
         },
-
         methods: {
             handlerBtn(type){
                 type ? this.$router.push('/index/applyPreservation/preservationPreview')
                      : this.$router.push('/index/applyPreservation/preservationCreate')
             },
         },
-
     }
 </script>
 
@@ -216,32 +84,6 @@
                 text-align: center;
                 font-size: 20px;
                 font-weight: normal;
-            }
-            .fd-content{
-                margin-top: 10px;
-                background: #fff;
-                font-size: 14px;
-                .fd-wrap{
-                    box-sizing: border-box;
-                    padding: 8px 20px;
-                    width: 100%;
-                    ul{
-                        box-sizing: border-box;
-                        width: 100%;
-                        padding: 0 20px;
-                        li{
-                            float: left;
-                            width: 25%;
-                            height: 30px;
-                            line-height: 30px;
-                        }
-                    }
-                }
-                .fd-table-wrap{
-                    box-sizing: border-box;
-                    padding: 20px;
-                    width: 100%;
-                }
             }
             .fd-btn-wrap{
                 .el-button{

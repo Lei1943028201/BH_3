@@ -1,90 +1,21 @@
 <template>
     <div id="preservationPreview">
         <div class="fd-main">
-            <span class="fd-btn-close">X</span>
-            <div class="fd-content">
-                <h2 class="fd-title">保全信息预览</h2>
-            </div>
-            <div class="fd-content">
-                <div class="fd-content-title-wrap">
-                    <h3 class="fd-content-title">保全基本信息</h3>
-                </div>
-                <div class="fd-wrap">
-                    <ul class="clear">
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="fd-content">
-                <div class="fd-content-title-wrap">
-                    <h3 class="fd-content-title">申请人</h3>
-                </div>
-                <div class="fd-wrap">
-                    <ul class="clear">
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class="">北京市高级人民法院</span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                        <li>
-                            <span class="fd-label">选择法院：</span><span class=""></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="fd-content">
-                <div class="fd-content-title-wrap">
-                    <h3 class="fd-content-title">申请人</h3>
-                </div>
-                <div class="fd-table-wrap">
-                    <el-table :data="tableData_sqr" size="mini" border stripe style="width: 100%">
-                        <el-table-column label="序号" width="65" type="index" />
-                        <el-table-column label="类型" width="180" prop="date" />
-                        <el-table-column label="名称" width="180" prop="name" />
-                        <el-table-column label="通讯地址" prop="address" />
-                    </el-table>
-                </div>
-            </div>
+            <i class="el-icon-close fd-btn-close"></i>
+            <!-- 保全基本信息 -->
+            <ItemPreviewBQJBXX/>
+            <!-- 申请人 -->
+            <ItemPreviewSQR/>
+            <!-- 被申请人 -->
+            <ItemPreviewBSQR/>
+            <!-- 原告代理人 -->
+            <ItemPreviewYGDLR/>
+            <!-- 财产线索 -->
+            <ItemPreviewCCXS/>
+            <!-- 担保信息 -->
+            <ItemPreviewDBXX/>
+            <!-- 上传材料 -->
+            <ItemPreviewSCCL/>
             <div class="fd-btn-wrap">
                 <el-button type="primary" @click="handlerBtn(false)">返回</el-button><el-button  type="primary" @click="handlerBtn(true)">创建保全</el-button>
             </div>
@@ -93,15 +24,29 @@
 </template>
 
 <script>
+    import ItemPreviewBQJBXX from '../../components/applyPreservation/itemPreview/itemPreviewBQJBXX'  // 保全基本信息
+    import ItemPreviewSQR from '../../components/applyPreservation/itemPreview/itemPreviewSQR'        // 申请人
+    import ItemPreviewBSQR from '../../components/applyPreservation/itemPreview/itemPreviewBSQR'      // 被申请人
+    import ItemPreviewYGDLR from '../../components/applyPreservation/itemPreview/itemPreviewYGDLR'    // 原告代理人
+    import ItemPreviewCCXS from '../../components/applyPreservation/itemPreview/itemPreviewCCXS'      // 财产线索
+    import ItemPreviewDBXX from '../../components/applyPreservation/itemPreview/itemPreviewDBXX'      // 担保信息
+    import ItemPreviewSCCL from '../../components/applyPreservation/itemPreview/itemPreviewSCCL'      // 上传材料
+
     export default {
         name: "preservationPreview",
+        components: {
+            ItemPreviewBQJBXX,
+            ItemPreviewSQR,
+            ItemPreviewBSQR,
+            ItemPreviewYGDLR,
+            ItemPreviewCCXS,
+            ItemPreviewDBXX,
+            ItemPreviewSCCL,
+        },
         methods: {
             handlerBtn(type){
-                if(type){
-                    this.$router.push('/index/index')
-                }else{
-                    this.$router.push('/index/applyPreservation/preservationInformation')
-                }
+                type ? this.$router.push('/index/index')
+                     : this.$router.push('/index/applyPreservation/preservationInformation')
             },
         }
     }
@@ -111,54 +56,19 @@
     @import "../../style/common";
     #preservationPreview{
         position: relative;
+        overflow: auto;
         width: 100%;
         height: 100%;
+        color: #333;
         .fd-main{
-            .el-center;
             box-sizing: border-box;
+            position: relative;
+            margin: 50px auto;
             padding: 30px 76px 40px;
-            width: 1120px;
+            width: 80%;
+            min-width: 960px;
+            max-width: 1280px;
             background: #fff;
-            .fd-content{
-                .fd-title{
-                    text-align: center;
-                    font-size: 18px;
-                    font-weight: normal;
-                    color: #333;
-                }
-                .fd-content-title-wrap{
-                    box-sizing: border-box;
-                    padding-top: 12px;
-                    height: 44px;
-                    border-bottom: 1px solid #f5f5f5;
-                    .fd-content-title{
-                        display: inline-block;
-                        padding-left: 5px;
-                        width: 110px;
-                        height: 20px;
-                        line-height: 20px;
-                        font-size: 16px;
-                        font-weight: normal;
-                        border-left: 4px solid @color-basic;
-                    }
-                }
-                .fd-wrap{
-                    box-sizing: border-box;
-                    padding: 8px 0;
-                    width: 100%;
-                    ul{
-                        box-sizing: border-box;
-                        width: 100%;
-                        font-size: 14px;
-                        li{
-                            float: left;
-                            width: 25%;
-                            height: 30px;
-                            line-height: 30px;
-                        }
-                    }
-                }
-            }
             .fd-btn-wrap{
                 .el-button{
                     width: 120px;

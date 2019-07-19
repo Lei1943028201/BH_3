@@ -3,7 +3,6 @@
         <div class="fd-main">
             <i class="el-icon-close fd-btn-close"></i>
             <div class="fd-content">
-                <!--<h2 class="fd-title">创建保全申请</h2>-->
                 <MyTitle theTitle="创建保全申请"/>
                 <el-form label-position="right" label-width="96px" :model="formLabelAlign">
                     <el-form-item label="选择法院">
@@ -34,8 +33,6 @@
                         <el-input v-model="formLabelAlign.name" class="fd-input-sqbqje"></el-input>元
                     </el-form-item>
                 </el-form>
-
-
             </div>
             <div class="fd-btn-wrap">
                 <el-button type="primary" @click="handlerBtn(false)">返回</el-button><el-button  type="primary" @click="handlerBtn(true)">创建保全</el-button>
