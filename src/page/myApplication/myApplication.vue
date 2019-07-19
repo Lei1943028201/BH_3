@@ -11,7 +11,7 @@
                 ></li>
             </ul>
             <div class="fd-card-content clear">
-                <Card/><Card/><Card/>
+                <Card v-for="item in cardLength" :key="item"/>
             </div>
             <div class="fd-pagination">
                 <span class="fd-btn disabled"><i class="el-icon-arrow-left"></i></span>
@@ -28,6 +28,7 @@
         name: "myApplication",
         data(){
             return {
+                windowWidth: 0,
                 tabList: [
                     {
                         name: '担保申请',
@@ -47,13 +48,31 @@
         },
         computed: {
             isActiveTab(){
-               return  tabItem => this.activeTab.name === tabItem.name
+               return tabItem => this.activeTab.name === tabItem.name
+            },
+            cardLength(){
+                if(this.windowWidth<1140){
+                    return 1
+                }else if(this.windowWidth<1660){
+                    return 2
+                }else{
+                    return 3
+                }
             }
         },
         methods: {
             handlerTab(tabItem){
                 this.activeTab = tabItem
+            },
+            getCardWrapHeight(){
+                this.windowWidth = window.innerWidth
+                window.onresize = ()=> {
+                    this.windowWidth = window.innerWidth
+                }
             }
+        },
+        mounted(){
+            this.getCardWrapHeight()
         }
     }
 </script>

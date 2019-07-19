@@ -23,7 +23,8 @@
     .fd-banner{
         position: relative;
         height: 250px;
-        background: #ccc url("../../../static/img/bg-banner.png") no-repeat center / 100% 100%;
+        //background: #ccc url("../../../static/img/bg-banner.png") no-repeat center / 100% 100%;
+        background: #ccc;
         .fd-content{
             .el-center;
             padding-left: 10%;

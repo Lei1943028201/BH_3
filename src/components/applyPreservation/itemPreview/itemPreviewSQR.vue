@@ -4,13 +4,10 @@
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
                 <el-table-column label="序号" width="65" type="index" />
-                <el-table-column v-for="(item, index) in tableTitle" :key="index" :label="item.name" :width="item.width" :prop="item.id" />
-                <el-table-column label="操作" width="200">
-                    <template slot-scope="scope">
-                        <span>编辑</span>
-                        <span>删除</span>
-                    </template>
-                </el-table-column>
+                <el-table-column v-for="(item, index) in tableTitle"
+                                 :key="index" :label="item.name"
+                                 :width="item.width"
+                                 :prop="item.id" />
             </el-table>
         </div>
     </div>
@@ -42,14 +39,14 @@
                 ],
             }
         },
+        components: {
+            MyTitle,
+        },
         computed: {
             ...mapState(['applyPreservation']),
             tableTitle(){
                 return this.applyPreservation.tableTitle.SQR
             }
-        },
-        components: {
-            MyTitle,
         },
     }
 </script>

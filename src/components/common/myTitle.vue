@@ -1,6 +1,6 @@
 <template>
     <div class="my-title">
-        <h3>{{theTitle}}</h3><!--<span class="fd-btn-add">+ 添加</span>-->
+        <h3>{{theTitle}}</h3><slot></slot>
     </div>
 </template>
 

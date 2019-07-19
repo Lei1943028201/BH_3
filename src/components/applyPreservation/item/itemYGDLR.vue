@@ -1,12 +1,18 @@
 <template>
     <div class="fd-content">
-        <MyTitle theTitle="原告代理人"/>
+        <MyTitle theTitle="原告代理人">
+            <span class="fd-btn-add">+ 添加</span>
+        </MyTitle>
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
                 <el-table-column label="序号" width="65" type="index" />
-                <el-table-column label="类型" width="180" prop="date" />
-                <el-table-column label="名称" width="180" prop="name" />
-                <el-table-column label="通讯地址" prop="address" />
+
+                <el-table-column
+                    v-for="(item, index) in tableTitle"
+                    :key="index" :label="item.name"
+                    :width="item.width"
+                    :prop="item.id" />
+
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <span>编辑</span>
@@ -24,6 +30,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import MyTitle from '../../common/myTitle'
     export default {
         name: "itemYGDLR",
@@ -51,6 +58,13 @@
         components: {
             MyTitle,
         },
+        computed: {
+            ...mapState(['applyPreservation']),
+            tableTitle(){
+                return this.applyPreservation.tableTitle.YGDLR
+            }
+        },
+
     }
 </script>
 

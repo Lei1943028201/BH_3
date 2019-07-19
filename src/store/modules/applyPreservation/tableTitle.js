@@ -68,8 +68,8 @@ const BSQR = [
     }
 ]
 
-// 被告代理人
-const BGDLR = [
+// 原告代理人
+const YGDLR = [
     {
         id: 'date',
         name: '类型',
@@ -165,7 +165,7 @@ export default {
     BQJBXX,
     SQR,
     BSQR,
-    BGDLR,
+    YGDLR,
     CCXS,
     DBXX,
     SCCL

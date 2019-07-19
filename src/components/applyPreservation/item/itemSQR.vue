@@ -1,10 +1,18 @@
 <template>
     <div class="fd-content">
-        <MyTitle theTitle="申请人"/>
+        <MyTitle theTitle="申请人">
+            <span class="fd-btn-add">+ 添加</span>
+        </MyTitle>
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
                 <el-table-column label="序号" width="65" type="index" />
-                <el-table-column v-for="(item, index) in tableTitle" :key="index" :label="item.name" :width="item.width" :prop="item.id" />
+
+                <el-table-column
+                    v-for="(item, index) in tableTitle"
+                    :key="index" :label="item.name"
+                    :width="item.width"
+                    :prop="item.id" />
+
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
                         <span>编辑</span>
@@ -42,15 +50,16 @@
                 ],
             }
         },
+        components: {
+            MyTitle,
+        },
         computed: {
             ...mapState(['applyPreservation']),
             tableTitle(){
                 return this.applyPreservation.tableTitle.SQR
             }
         },
-        components: {
-            MyTitle,
-        },
+
     }
 </script>
 

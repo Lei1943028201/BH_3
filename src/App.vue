@@ -11,7 +11,7 @@
 </script>
 
 <style lang="less">
-    @import './style/element-ui';
     @import './style/font-awesome.min.css';
+    @import './style/element-ui';
     @import './style/common';
 </style>

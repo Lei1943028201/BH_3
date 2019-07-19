@@ -89,7 +89,7 @@
                     color: #333;
                 }
                 .el-form{
-                    margin-top: 36px;
+                    margin-top: 18px;
                 }
             }
             .fd-btn-wrap{

@@ -1,146 +1,164 @@
 body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4, h5, h6, i, b, textarea, button, input, select, figure, figcaption {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  font-style: normal;
-  text-decoration: none;
-  border: none;
-  font-family: "Microsoft Yahei", sans-serif;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  &:focus {
-    outline: none;
-  }
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    text-decoration: none;
+    border: none;
+    font-family: "Microsoft Yahei", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    &:focus {
+        outline: none;
+    }
 }
 
 input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 textarea {
-  -webkit-appearance: none;
+    -webkit-appearance: none;
 }
 
 html, body {
-  height: 100%;
-  width: 100%;
-  min-width: 1024px;
-  min-height: 768px;
+    height: 100%;
+    width: 100%;
+    min-width: 1024px;
+    min-height: 720px;
 }
 
 .clear:after {
-  content: '';
-  display: block;
-  clear: both;
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .clear {
-  zoom: 1;
+    zoom: 1;
 }
 
 .margin {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .left {
-  float: left;
+    float: left;
 }
 
 .right {
-  float: right;
+    float: right;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
 .show {
-  display: block;
+    display: block;
 }
 
 .text_center {
-  text-align: center;
+    text-align: center;
 }
 
 .text_left {
-  text-align: left;
+    text-align: left;
 }
 
 .text_right {
-  text-align: right;
+    text-align: right;
 }
 
 .ver_align {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
-.el-center{
-  position: absolute;
-  top: 90px;
-  left: 0;
-  right: 0;
-  bottom: 90px;
-  margin: auto;
+.el-center {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    bottom: 90px;
+    margin: auto;
 }
 
 // 公共的color
 @color-basic: #d63434;
 
-
 // 公共的字体样式
-.fd-bold{font-weight: bold;}
+.fd-bold {
+    font-weight: bold;
+}
 
-.fd-size-12{font-size: 12px;}
+.fd-size-12 {
+    font-size: 12px;
+}
 
-.fd-size-14{font-size: 14px;}
+.fd-size-14 {
+    font-size: 14px;
+}
 
-.fd-size-16{font-size: 16px;}
+.fd-size-16 {
+    font-size: 16px;
+}
 
-.fd-size-16{font-size: 18px;}
+.fd-size-16 {
+    font-size: 18px;
+}
 
-.fd-size-22{font-size: 22px;}
+.fd-size-22 {
+    font-size: 22px;
+}
 
-.fd-size-26{font-size: 26px;}
+.fd-size-26 {
+    font-size: 26px;
+}
 
-.fd-size-30{font-size: 30px;}
+.fd-size-30 {
+    font-size: 30px;
+}
 
-.fd-size-50{font-size: 50px;}
+.fd-size-50 {
+    font-size: 50px;
+}
 
 //页面的公共样式
 
-#app{
-  width: 100%;
-  height: 100%;
+#app {
+    width: 100%;
+    height: 100%;
 }
 
 // 公共的按钮样式
-.fd-btn-wrap{
-  margin-top: 40px;
-  text-align: center;
-  .el-button{
-    margin: 0 30px;
-  }
+.fd-btn-wrap {
+    margin-top: 40px;
+    text-align: center;
+    .el-button {
+        margin: 0 30px;
+    }
 }
 
-.fd-btn-add{
-  display: inline-block;
-  padding: 0 5px;
-  height: 18px;
-  line-height: 18px;
-  font-size: 14px;
-  color: @color-basic;
-  border: 1px solid @color-basic;
+.fd-btn-add {
+    display: inline-block;
+    padding: 0 5px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 14px;
+    color: @color-basic;
+    border: 1px solid @color-basic;
+    cursor: pointer;
 }
 
-.fd-btn-close{
-  display: inline-block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  cursor: pointer;
+.fd-btn-close {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 
