@@ -6,12 +6,12 @@ import {asyncRouterMap, constantRouterMap} from '@/router'
  * @param route
  */
 function hasPermission(roles, route) {
-  // roles为权限身份数组
-  if (route.meta && route.meta.roles) {
-    return roles.some(role => route.meta.roles.indexOf(role) >= 0)
-  } else {
-    return true
-  }
+    // roles为权限身份数组
+    if (route.meta && route.meta.roles) {
+        return roles.some(role => route.meta.roles.indexOf(role) >= 0)
+    } else {
+        return true
+    }
 }
 
 

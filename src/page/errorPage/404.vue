@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="error_404">
         404
     </div>
 </template>
@@ -29,6 +29,6 @@
     }
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
+<style lang="less" rel="stylesheet/less">
 
 </style>

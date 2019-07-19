@@ -40,7 +40,7 @@ export const removeStore = name => {
  *   type == 2 ---> "yyyymmddhhMMss"
  *   type == '' ---> "yyyy-mm-dd hh:MM:ss"
  */
-export const formatDate = (date, type) =>{
+export const formatDate = (date, type) => {
     let year = date.getFullYear();//年
     let month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;//月
     let day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();//日
@@ -50,11 +50,11 @@ export const formatDate = (date, type) =>{
     let milliseconds = date.getMilliseconds() < 10 ? "0" + date.getMilliseconds() : date.getMilliseconds() //毫秒
     if (type == 1) {
         return year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds + "." + milliseconds;
-    } else if(type == 2){
-        return year+""+month+""+day+""+hour+""+minutes+""+seconds;
-    }else if(type == 3){
+    } else if (type == 2) {
+        return year + "" + month + "" + day + "" + hour + "" + minutes + "" + seconds;
+    } else if (type == 3) {
         return year + "-" + month + "-" + day;
-    }else {
+    } else {
         return year + "-" + month + "-" + day + " " + hour + ":" + minutes + ":" + seconds;
     }
 }
@@ -78,7 +78,7 @@ export const parseToDate = (timeValue) => {
 export const isEmpty = (keys) => {
     if (typeof keys === "string") {
         keys = keys.replace(/\"|&nbsp;|\\/g, '').replace(/(^\s*)|(\s*$)/g, "");
-        if (keys == "" || keys == null || keys == "null" || keys === "undefined" ) {
+        if (keys == "" || keys == null || keys == "null" || keys === "undefined") {
             return true;
         } else {
             return false;
@@ -87,19 +87,19 @@ export const isEmpty = (keys) => {
         return true;
     } else if (typeof keys === "number") {
         return false;
-    }else if(typeof keys === "boolean"){
+    } else if (typeof keys === "boolean") {
         return false;
-    }else if(typeof keys == "object"){
-        if(JSON.stringify(keys )=="{}"){
+    } else if (typeof keys == "object") {
+        if (JSON.stringify(keys) == "{}") {
             return true;
-        }else if(keys == null){ // null
+        } else if (keys == null) { // null
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    if(keys instanceof Array && keys.length == 0){// 数组
+    if (keys instanceof Array && keys.length == 0) {// 数组
         return true;
     }
 
@@ -113,7 +113,7 @@ export const toFixedNum = (num) => {
     return tonum;
 }
 
-export const showMessage = () =>{
+export const showMessage = () => {
     this.$message({
         showClose: true,
         message: '对不起，您暂无此操作权限~',
@@ -124,7 +124,7 @@ export const showMessage = () =>{
 /**
  * 读取base64
  */
-export const  readFile = file => {
+export const readFile = file => {
     console.log(file)
     //let file = this.files[0];
     //判断是否是图片类型
@@ -172,6 +172,6 @@ export const param2Obj = url => {
 
 //是否为正整数
 export const isInteger = (s) => {
-    let re = /^[0-9]+$/ ;
+    let re = /^[0-9]+$/;
     return re.test(s)
 }

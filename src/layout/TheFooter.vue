@@ -1,6 +1,6 @@
 <template>
-    <div>
-        footer
+    <div id="footer">
+        <span class="fd-copyright">版权信息-备案号852741852963</span>
     </div>
 </template>
 
@@ -29,6 +29,15 @@
     }
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
-
+<style lang="less" rel="stylesheet/less">
+    #footer{
+        position: relative;
+        width: 100%;
+        height: 26px;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        line-height: 26px;
+        background: #313131;
+    }
 </style>

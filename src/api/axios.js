@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { Message, MessageBox } from 'element-ui'
+import {Message, MessageBox} from 'element-ui'
 import store from '../store'
-import { getToken } from '@/utils/auth'
+import {getToken} from '@/utils/auth'
 
 // 创建axios实例
-let service =  axios.create({
+let service = axios.create({
     baseURL: 'https://www.easy-mock.com/mock/5c46e24769e1dd2d0053e4d8/base', // api的base_url
     //baseURL: process.env.BASE_API, // api的base_url
     timeout: 5000 // 请求超时时间
@@ -13,7 +13,7 @@ let service =  axios.create({
 service.interceptors.request.use(config => {
     if (store.getters.token) {
         config.headers = {
-            'Authorization' : "Token " + getToken(), //携带权限参数
+            'Authorization': "Token " + getToken(), //携带权限参数
         };
     }
     return config

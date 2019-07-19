@@ -1,15 +1,8 @@
 <template>
-    <div class="home">
-        <TheHeader/>
-        <div class="left-fixed-right-auto">
-            <div class="content_page">
-                <div class="content">
-                    <TheBread/>
-                    <router-view></router-view><!--页面渲染入口-->
-                </div>
-            </div>
-        </div>
-        <TheFooter/>
+    <div id="home">
+        <TheHeader v-if="showHeader" />
+        <router-view></router-view><!--页面渲染入口-->
+        <TheFooter v-if="showFooter" />
     </div>
 </template>
 
@@ -34,7 +27,14 @@
         //方法函数
         methods: {},
         //计算属性
-        computed: {},
+        computed: {
+            showHeader(){
+                return this.$route.meta.showHeader === false ? false : true
+            },
+            showFooter(){
+                return this.$route.meta.showFooter === false ? false : true
+            }
+        },
         //监视函数
         watch: {},
         //生命周期函数
@@ -46,6 +46,10 @@
     }
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
-
+<style lang="less" rel="stylesheet/less">
+    #home{
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+    }
 </style>

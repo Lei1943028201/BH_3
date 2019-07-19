@@ -34,9 +34,61 @@ export const constantRouterMap = [
             {
                 path: 'index',
                 meta: {
-                    title: '首页',
+                    title: '我的申请',
                 },
-                component: () => import('@/page'),
+                component: () => import('@/page/myApplication/myApplication'),
+            },
+            {
+                path: 'applyGuarantee',
+                meta: {
+                    title: '申请保单',
+                },
+                component: () => import('@/page/applyGuarantee/applyGuarantee'),
+            },
+            {
+                path: 'applyPreservation',
+                meta: {
+                    title: '申请保全',
+                },
+                redirect: '/index/applyPreservation/preservationGuide',
+                component: () => import('@/page/applyPreservation/index'),
+                children: [
+                    {
+                        path: 'preservationGuide',
+                        meta: {
+                            title: '申请须知',
+                            showHeader: false,
+                            showFooter: false
+                        },
+                        component: () => import('@/page/applyPreservation/preservationGuide'),
+                    },
+                    {
+                        path: 'preservationCreate',
+                        meta: {
+                            title: '创建保全',
+                            showHeader: false,
+                            showFooter: false
+                        },
+                        component: () => import('@/page/applyPreservation/preservationCreate'),
+                    },
+                    {
+                        path: 'preservationInformation',
+                        meta: {
+                            title: '保全信息',
+                        },
+                        component: () => import('@/page/applyPreservation/preservationInformation'),
+                    },
+                    {
+                        path: 'preservationPreview',
+                        meta: {
+                            title: '预览保全',
+                            showHeader: false,
+                            showFooter: false
+                        },
+                        component: () => import('@/page/applyPreservation/preservationPreview'),
+                    },
+
+                ]
             }
         ]
     }
@@ -44,7 +96,7 @@ export const constantRouterMap = [
 
 //注册路由
 export default new Router({
-    // mode: 'history', //后端支持可开
+    mode: 'history', //后端支持可开
     routes: constantRouterMap
 })
 

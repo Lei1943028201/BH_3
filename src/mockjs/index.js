@@ -23,6 +23,5 @@ Mock.mock(/\/user\/info/, 'get', {
 
 Mock.mock(/\/user\/logout/, 'get', {
     code: 200,
-    data: {
-    }
+    data: {}
 })

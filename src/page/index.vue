@@ -5,8 +5,6 @@
 </template>
 
 <script>
-
-
     export default {
         //组件
         components: {},
@@ -17,9 +15,7 @@
             return {}
         },
         //方法函数
-        methods: {
-
-        },
+        methods: {},
         //计算属性
         computed: {},
         //监视函数
@@ -33,6 +29,6 @@
     }
 </script>
 
-<style lang="less" rel="stylesheet/less" scoped>
+<style lang="less" rel="stylesheet/less">
 
 </style>
