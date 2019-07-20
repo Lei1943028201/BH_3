@@ -1,7 +1,7 @@
 <template>
     <div class="fd-content">
         <MyTitle theTitle="财产线索">
-            <span class="fd-btn-add">+ 添加</span>
+            <span class="fd-btn-add" name="add">+ 添加</span>
         </MyTitle>
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
@@ -20,11 +20,7 @@
                     </template>
                 </el-table-column>
             </el-table>
-            <el-pagination
-                    background
-                    layout="prev, pager, next, jumper"
-                    :total="100">
-            </el-pagination>
+
         </div>
     </div>
 </template>
@@ -36,23 +32,7 @@
         name: "itemCCXS",
         data(){
             return {
-                tableData: [
-                    {
-                        date: '2016-05-02',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1518 弄'
-                    },
-                    {
-                        date: '2016-05-04',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1517 弄'
-                    },
-                    {
-                        date: '2016-05-03',
-                        name: '王小虎',
-                        address: '上海市普陀区金沙江路 1516 弄'
-                    }
-                ],
+                tableTitle:[]
             }
         },
         components: {
@@ -60,10 +40,18 @@
         },
         computed: {
             ...mapState(['applyPreservation']),
-            tableTitle(){
-                return this.applyPreservation.tableTitle.CCXS
+            tableData(){
+                return this.applyPreservation.tableData.CCXS
             }
         },
+        methods: {
+            addCol(){
+                this.tableTitle = this.applyPreservation.tableTitle.CCXS
+            }
+        },
+        mounted(){
+            this.addCol()
+        }
     }
 </script>
 

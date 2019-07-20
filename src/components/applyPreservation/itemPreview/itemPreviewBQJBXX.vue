@@ -18,15 +18,16 @@
         name: "itemBQJBXX",
         data(){
             return {
-                tableData: {
-                    c_xqfy: '北京市高级人民法院'
-                }
+
             }
         },
         computed: {
             ...mapState(['applyPreservation']),
             tableTitle(){
                 return this.applyPreservation.tableTitle.BQJBXX
+            },
+            tableData(){
+                return this.applyPreservation.tableData.BQJBXX
             },
         },
         components: {

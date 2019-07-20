@@ -12,7 +12,7 @@ Vue.use(ElementUI, {size: 'big'});
 
 Vue.config.productionTip = false
 
-//import './mockjs'  //引用mock
+import './mockjs'  //引用mock
 import '@/permission' // permission control
 
 /* eslint-disable no-new */

@@ -82,7 +82,6 @@
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         let userinfo = this.ruleForm;
-                        console.log(userinfo)
                         this.$store.dispatch('Login', userinfo).then(res => {
                             this.$router.push({path: '/'})
                         })

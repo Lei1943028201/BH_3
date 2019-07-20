@@ -51,7 +51,7 @@
                return tabItem => this.activeTab.name === tabItem.name
             },
             cardLength(){
-                if(this.windowWidth<1140){
+                if(this.windowWidth<1150){
                     return 1
                 }else if(this.windowWidth<1660){
                     return 2
