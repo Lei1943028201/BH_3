@@ -1,7 +1,10 @@
 <template>
     <div class="fd-content">
         <MyTitle theTitle="财产线索">
-            <span class="fd-btn-add" name="add">+ 添加</span>
+            <span class="fd-btn-add">+ 添加</span>
+            <div class="right" style="margin-right: 20px;">
+                <el-button type="primary" size="mini">申请财产查控</el-button>
+            </div>
         </MyTitle>
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
@@ -15,12 +18,13 @@
 
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
-                        <span>编辑</span>
-                        <span>删除</span>
+                        <span class="fd-table-text"><i class="el-icon-delete"></i>删除</span>
+                        <el-divider direction="vertical" class="fd-table-text"></el-divider>
+                        <span class="fd-table-text"><i class="el-icon-edit-outline"></i>编辑</span>
                     </template>
                 </el-table-column>
             </el-table>
-
+            <p class="fd-table-bottom">财产总价值：222.87万元</p>
         </div>
     </div>
 </template>
@@ -65,6 +69,11 @@
             box-sizing: border-box;
             padding: 20px;
             width: 100%;
+            .fd-table-bottom{
+                padding-top: 20px;
+                font-size: 16px;
+                text-align: right;
+            }
         }
     }
 </style>

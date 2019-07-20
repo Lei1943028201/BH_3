@@ -11,7 +11,7 @@
                     :prop="item.id" />
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
-                        <span>上传</span>
+                        <span class="fd-table-text"><i class="el-icon-delete"></i>上传</span>
                     </template>
                 </el-table-column>
             </el-table>

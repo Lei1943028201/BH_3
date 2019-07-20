@@ -15,8 +15,9 @@
 
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
-                        <span>编辑</span>
-                        <span>删除</span>
+                        <span class="fd-table-text"><i class="el-icon-delete"></i>删除</span>
+                        <el-divider direction="vertical" class="fd-table-text"></el-divider>
+                        <span class="fd-table-text"><i class="el-icon-edit-outline"></i>编辑</span>
                     </template>
                 </el-table-column>
             </el-table>

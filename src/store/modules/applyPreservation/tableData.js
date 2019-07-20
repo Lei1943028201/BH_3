@@ -44,6 +44,24 @@ const CCXS = [
         c_ccsyr: '财产所有人',
         c_ccxx: '财产信息',
         c_jz: '价值',
+    },
+    {
+        c_cclx: '财产类型',
+        c_ccsyr: '财产所有人',
+        c_ccxx: '财产信息',
+        c_jz: '价值',
+    },
+    {
+        c_cclx: '财产类型',
+        c_ccsyr: '财产所有人',
+        c_ccxx: '财产信息',
+        c_jz: '价值',
+    },
+    {
+        c_cclx: '财产类型',
+        c_ccsyr: '财产所有人',
+        c_ccxx: '财产信息',
+        c_jz: '价值',
     }
 ]
 

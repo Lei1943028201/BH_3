@@ -2,6 +2,10 @@
     <div class="fd-content">
         <MyTitle theTitle="担保信息">
             <span class="fd-btn-add" name="add">+ 添加</span>
+            <div class="right" style="margin-right: 20px;">
+                <span>提示：请先确保您已经办理了保全担保，否则请走线下流程。立即</span>
+                <el-button type="primary" size="mini">线上申请担保</el-button>
+            </div>
         </MyTitle>
         <div class="fd-table-wrap">
             <el-table :data="tableData" size="mini" border stripe style="width: 100%">
@@ -13,11 +17,13 @@
                     :prop="item.id" />
                 <el-table-column label="操作" width="200">
                     <template slot-scope="scope">
-                        <span>编辑</span>
-                        <span>删除1</span>
+                        <span class="fd-table-text"><i class="el-icon-delete"></i>删除</span>
+                        <el-divider direction="vertical" class="fd-table-text"></el-divider>
+                        <span class="fd-table-text"><i class="el-icon-edit-outline"></i>编辑</span>
                     </template>
                 </el-table-column>
             </el-table>
+            <p class="fd-table-bottom">担保总价值：222.87万元</p>
         </div>
     </div>
 </template>
@@ -62,6 +68,11 @@
             box-sizing: border-box;
             padding: 20px;
             width: 100%;
+            .fd-table-bottom{
+                padding-top: 20px;
+                font-size: 16px;
+                text-align: right;
+            }
         }
     }
 </style>
