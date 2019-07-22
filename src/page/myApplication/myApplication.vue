@@ -11,7 +11,7 @@
                 ></li>
             </ul>
             <div class="fd-card-content clear">
-                <Card v-for="item in cardLength" :key="item"/>
+                <Card v-for="(item, index) in dataList" :key="index"/>
             </div>
             <div class="fd-pagination">
                 <span class="fd-btn disabled"><i class="el-icon-arrow-left"></i></span>
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import Card from '../../components/myApplication/card'
     import Banner from '../../components/myApplication/banner'
     export default {
@@ -47,6 +48,10 @@
             Banner
         },
         computed: {
+            ...mapState(['myApplication']),
+            dataList(){
+                return this.myApplication.preservation
+            },
             isActiveTab(){
                return tabItem => this.activeTab.name === tabItem.name
             },
@@ -73,7 +78,7 @@
         },
         mounted(){
             this.getCardWrapHeight()
-        }
+        },
     }
 </script>
 

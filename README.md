@@ -1,6 +1,8 @@
 # vue_cli
 
-> A Vue.js project
+> 01.01001356-最高人民法院诉讼服务管理中心信息化建设2019-最高人民法院诉讼服务管理中心信息化-诉讼保全系统（执行项目） 
+
+> [点击跳转到git](http://gitlab.thunisoft.com/FY/fy_zg_sfglzx_ssbq.git)
 
 ## Build Setup
 
@@ -26,5 +28,4 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+	

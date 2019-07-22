@@ -8,6 +8,9 @@ import user from './modules/user'
 // 权限控制
 import permission from './modules/permission'
 
+// 个人申请
+import myApplication from './modules/myApplication'
+
 // 申请担保
 import applyPreservation from './modules/applyPreservation'
 
@@ -19,6 +22,7 @@ export default new Vuex.Store({
     modules: {
         user,
         permission,
+        myApplication,
         applyPreservation,
         applyGuarantee
     }

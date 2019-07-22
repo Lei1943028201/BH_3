@@ -5,7 +5,7 @@ Mock.setup({
     timeout: '300-600'
 })
 
-Mock.mock(/\/user\/login/, 'post', {
+Mock.mock(/\/account\/login/, 'post', {
     code: 200,
     data: {
         message: '添加成功',
@@ -13,7 +13,7 @@ Mock.mock(/\/user\/login/, 'post', {
     }
 })
 
-Mock.mock(/\/user\/info/, 'get', {
+Mock.mock(/\/account\/info/, 'get', {
     code: 200,
     data: {
         message: '添加成功',
@@ -21,7 +21,7 @@ Mock.mock(/\/user\/info/, 'get', {
     }
 })
 
-Mock.mock(/\/user\/logout/, 'get', {
+Mock.mock(/\/account\/logout/, 'get', {
     code: 200,
     data: {}
 })

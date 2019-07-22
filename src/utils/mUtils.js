@@ -125,8 +125,6 @@ export const showMessage = () => {
  * 读取base64
  */
 export const readFile = file => {
-    console.log(file)
-    //let file = this.files[0];
     //判断是否是图片类型
     if (!/image\/\w+/.test(file.raw.type)) {
         alert("只能选择图片");

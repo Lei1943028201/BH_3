@@ -6,7 +6,8 @@
                 <MyTitle theTitle="创建保全申请"/>
                 <el-form label-position="right" label-width="96px" :model="formLabelAlign">
                     <el-form-item label="选择法院">
-                        <el-input v-model="formLabelAlign.name"></el-input>
+                        <el-input v-model="formLabelAlign.name" @focus="isShowTree('block')"></el-input>
+                        <el-tree id="fy-tree" :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
                     </el-form-item>
                     <el-form-item label="保全类别">
                         <el-radio-group v-model="formLabelAlign.name1">
@@ -52,6 +53,47 @@
                     name1: '',
                     name2: '',
                     name3: '',
+                },
+                data:
+                    [
+                        {
+                    label: '一级 1',
+                    children: [{
+                        label: '二级 1-1',
+                        children: [{
+                            label: '三级 1-1-1'
+                        }]
+                    }]
+                }, {
+                    label: '一级 2',
+                    children: [{
+                        label: '二级 2-1',
+                        children: [{
+                            label: '三级 2-1-1'
+                        }]
+                    }, {
+                        label: '二级 2-2',
+                        children: [{
+                            label: '三级 2-2-1'
+                        }]
+                    }]
+                }, {
+                    label: '一级 3',
+                    children: [{
+                        label: '二级 3-1',
+                        children: [{
+                            label: '三级 3-1-1'
+                        }]
+                    }, {
+                        label: '二级 3-2',
+                        children: [{
+                            label: '三级 3-2-1'
+                        }]
+                    }]
+                }],
+                defaultProps: {
+                    children: 'children',
+                    label: 'label'
                 }
             }
         },
@@ -59,11 +101,16 @@
             MyTitle
         },
         methods: {
+            isShowTree(type){
+                document.getElementById('fy-tree').style.display = type
+            },
             handlerBtn(type){
                 type ? this.$router.push('/index/applyPreservation/preservationInformation')
                      : this.$router.push('/index/applyPreservation/preservationGuide')
             },
-
+            handleNodeClick(data) {
+                console.log(data);
+            }
         }
     }
 </script>
@@ -102,5 +149,15 @@
     .fd-input-sqbqje{
         margin-right: 5px;
         width: 92%;
+    }
+    #fy-tree{
+        box-sizing: border-box;
+        overflow: auto;
+        display: none;
+        position: absolute;
+        min-width: 100%;
+        height: 250px;
+        border: 1px solid #e5e5e5;
+        z-index: 1;
     }
 </style>

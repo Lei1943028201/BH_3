@@ -60,11 +60,9 @@ export default  {
                 let asyncRouterMaps = asyncRouterMap; // 将头部菜单添加到对应的二级菜单下面;
                 let accessedRouters
                 if (roles.indexOf('admin') >= 0) {
-                    console.log('admin>=0')
                     // 如果是管理员，直接将权限路由赋值给新路由;
                     accessedRouters = asyncRouterMaps
                 } else {
-                    console.log('admin<0')
                     // 非管理员用户,如roles:['editor','developer']，则需要过滤权限路由数据
                     accessedRouters = filterAsyncRouter(asyncRouterMaps, roles)
                 }

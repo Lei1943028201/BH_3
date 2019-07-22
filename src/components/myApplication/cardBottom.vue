@@ -7,14 +7,19 @@
         </li>
         <li class="fd-ul-li-btn-content">
             <el-button type="primary">立即缴费</el-button><br/>
-            <span class="fd-text-small fd-link-detail">查看详情<i class="el-icon-d-arrow-right"></i></span>
+            <span class="fd-text-small fd-link-detail" @click="handlerDetail()">查看详情<i class="el-icon-d-arrow-right"></i></span>
         </li>
     </ul>
 </template>
 
 <script>
     export default {
-        name: "cardBottom"
+        name: "cardBottom",
+        methods: {
+            handlerDetail(){
+                this.$router.push('/index/applyPreservation/preservationInformation')
+            }
+        },
     }
 </script>
 

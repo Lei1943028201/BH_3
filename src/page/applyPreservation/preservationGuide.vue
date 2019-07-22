@@ -6,41 +6,12 @@
                 <MyTitle theTitle="网上保全须知"/>
                 <ul>
                     <li class="fd-size-18 text_center fd-title">《民事诉讼法》</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可在证据可能灭失或者以后难以取得的情况下，当事人可
-                        在证据可能灭失或者以后难以取得的情况下，当事人可在证据可能灭失或者以后难以取得的情况下，当事人可在证据可能灭失或者以后难以取得的情况下，当事人可在证据可能灭失或者以后难以取得的情况下，当事人可
+                    <li class="fd-size-14 fd-item" v-for="(guideItem, guideIndex) in guideData" :key="guideIndex">
+                        <span class="fd-bold" v-text="guideItem.title"></span>
+                        <span>{{guideItem.value}}</span>
                     </li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>     <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
-                    <li class="fd-size-14 fd-item"><span class="fd-bold">第八十一条</span>在证据可能灭失或者以后难以取得的情况下，当事人可</li>
                 </ul>
-                <p><el-radio v-model="radio"  label="1">我已阅读网上保全须知</el-radio></p>
+                <p><el-radio v-model="radio" label="1">我已阅读网上保全须知</el-radio></p>
                 <div class="fd-btn-wrap">
                     <el-button  type="primary" @click="handlerBtn(false)">取消</el-button><el-button type="primary" @click="handlerBtn(true)">创建保全申请</el-button>
                 </div>
@@ -50,6 +21,7 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
     import MyTitle from '../../components/common/myTitle'
     export default {
         name: "preservationGuide",
@@ -60,6 +32,12 @@
         },
         components: {
             MyTitle
+        },
+        computed: {
+            ...mapState(['applyPreservation']),
+            guideData(){
+                return this.applyPreservation.webData.GUIDE
+            }
         },
         methods: {
             handlerBtn(type){
