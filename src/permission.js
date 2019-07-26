@@ -38,20 +38,23 @@ router.beforeEach((to, from, next) => {
                     })
                 }).catch((err) => {
                     store.dispatch('FedLogOut').then(() => {
-                        Message.error(err || 'Verification failed, please login again')
+                        /*Message.error(err || 'Verification failed, please login again')*/
                         next({path: '/'})
                     })
                 })
-            } else {
+            }
+            else {
                 // 没有动态改变权限的需求可直接next() 删除下方权限判断 ↓
                 if (hasPermission(store.getters.roles, to.meta.roles)) {
-                    next()//
-                } else {
+                    next()
+                }
+                else {
                     next({path: '/401', replace: true, query: {noGoBack: true}})
                 }
             }
         }
     } else {
+
         if (whiteList.indexOf(to.path) !== -1) {
             next()
         } else {
@@ -70,7 +73,7 @@ router.afterEach(() => {
 
 
 /**
- 本系统权限逻辑分析：
+ 本系统权限逻辑：
  1、路由对象区分权限路由对象和非权限路由对象；初始化时，将非权限路由对象赋值给Router;同时设置权限路由中的meta对象，如:meta:{roles:['admin','editor']}
  表示该roles所拥有的路由权限;
  2、通过用户登录成功之后返回的roles值，进行路由的匹配并生成新的路由对象;
@@ -89,7 +92,7 @@ router.afterEach(() => {
  同时,通过store.dispatch('GenerateRoutes', { roles })去重新过滤和生成路由，并将重新生成之后的权限路由'routes'保存到vuex;
  最后,通过router.addRoutes()合并路由表;
  如果在获取用户信息接口时，出现错误，则调取store.dispatch('FedLogOut')接口，返回到login页面;
- 用户FedLogOut之后，需要情况vuex和localStorage中的token信息;
+ 用户FedLogOut之后，需要清空vuex和localStorage中的token信息;
 
  (2)、用户已经拥有roles信息；
  点击页面路由，通过roles权限判断 hasPermission();

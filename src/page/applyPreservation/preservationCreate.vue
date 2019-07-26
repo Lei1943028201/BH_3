@@ -54,40 +54,12 @@
                     name2: '',
                     name3: '',
                 },
-                data:
-                    [
-                        {
+                data: [{
                     label: '一级 1',
                     children: [{
                         label: '二级 1-1',
                         children: [{
                             label: '三级 1-1-1'
-                        }]
-                    }]
-                }, {
-                    label: '一级 2',
-                    children: [{
-                        label: '二级 2-1',
-                        children: [{
-                            label: '三级 2-1-1'
-                        }]
-                    }, {
-                        label: '二级 2-2',
-                        children: [{
-                            label: '三级 2-2-1'
-                        }]
-                    }]
-                }, {
-                    label: '一级 3',
-                    children: [{
-                        label: '二级 3-1',
-                        children: [{
-                            label: '三级 3-1-1'
-                        }]
-                    }, {
-                        label: '二级 3-2',
-                        children: [{
-                            label: '三级 3-2-1'
                         }]
                     }]
                 }],
@@ -99,6 +71,20 @@
         },
         components: {
             MyTitle
+        },
+        computed: {
+            RMB(){
+                let num = 0
+
+                if(num<1000){
+                    num = 30
+                }else if(num < 100000){
+                    num = 30 + (num - 1000) * 0.01
+                }else{
+                    num = 1020 + (num - 100000) * 0.005
+                }
+                return num > 5000 ? 5000: num
+            }
         },
         methods: {
             isShowTree(type){

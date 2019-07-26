@@ -6,7 +6,8 @@ import {getToken} from '@/utils/auth'
 // 创建axios实例
 let service = axios.create({
     //baseURL: 'https://www.easy-mock.com/mock/5c46e24769e1dd2d0053e4d8/base', // api的base_url
-    baseURL: process.env.BASE_API, // api的base_url
+    baseURL: 'http://172.25.17.6/mock/496', // api的base_url
+    //baseURL: process.env.BASE_API, // api的base_url
     timeout: 5000 // 请求超时时间
 })
 // request拦截器

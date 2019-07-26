@@ -6,10 +6,7 @@
         <div class="fd-header-right">
             <div>
                 <span><i class="el-icon-user"></i></span>
-            <!--    <ul>
-                    <li>user</li>
-                    <li>登出</li>
-                </ul>-->
+                <el-button size="mini" @click="layout">登出</el-button>
             </div>
         </div>
         <div class="fd-header-center">

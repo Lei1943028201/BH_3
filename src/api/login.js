@@ -26,7 +26,7 @@ export function userRegister() {
 export function getInfo(token) {
 
     return request({
-        url: BASE_URL+ '/info',
+        url: BASE_URL + '/info',
         method: 'get',
         params: {token}
     })

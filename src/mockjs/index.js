@@ -7,16 +7,16 @@ Mock.setup({
 
 Mock.mock(/\/account\/login/, 'post', {
     code: 200,
+    message: '添加成功',
     data: {
-        message: '添加成功',
         token: 'admin'
     }
 })
 
 Mock.mock(/\/account\/info/, 'get', {
     code: 200,
+    message: '添加成功',
     data: {
-        message: '添加成功',
         roles: ['admin']
     }
 })
